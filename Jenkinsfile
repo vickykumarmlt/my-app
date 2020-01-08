@@ -6,4 +6,7 @@ node{
   stage('Compile-package'){
     sh "${mvnHome} clean package"
   }
+  stage('print'){
+    sh 'java -cp /var/lib/jenkins/workspace/my-app-pipeline/target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App'
+  }
 }
