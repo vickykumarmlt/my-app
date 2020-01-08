@@ -8,6 +8,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World from maven sample project ssdaddafsfshal" );
+        System.out.println( "Hello World from maven sample project and this output tested with jenkins" );
     }
 }
