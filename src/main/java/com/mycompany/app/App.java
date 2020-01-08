@@ -8,6 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World from maven sample project and this output tested with jenkins" );
+        System.out.println( "Hello World from maven sample project" );
+	System.out.println("Tested with jenkins");
     }
 }
