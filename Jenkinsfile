@@ -14,8 +14,7 @@ node{
   }
    stage('echoing output from console'){
      def value=5
-     def user=$USER
-     sh "echo ${value}"  
+     sh "echo ${value} "$USER""  
   }
   stage('Email notification'){
      mail bcc: '', body: 'jenkins job completed', cc: '', from: '', replyTo: '', subject: 'Jenkins job status', to: 'vikram1.kumar@paytm.com'
