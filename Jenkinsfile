@@ -14,7 +14,8 @@ node{
   }
    stage('echoing output from console'){
      def value=5
-     sh "echo ${value} $USER $whoami"
+     def user=$USER
+     sh "echo ${value} ${user}"
      
   }
 }
