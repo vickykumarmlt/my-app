@@ -13,7 +13,8 @@ node{
     sh 'java -cp /var/lib/jenkins/workspace/my-app-pipeline/target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App'
   }
    stage('echoing output from console'){
-     sh 'echo "username" "$USER"' 
+     sh "value=5"
+     sh 'echo "username" "$USER" "value"' 
      sh "whoami"
   }
 }
