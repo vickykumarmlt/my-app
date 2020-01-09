@@ -19,4 +19,7 @@ node{
   stage('Email notification'){
      mail bcc: '', body: 'jenkins job successfully completed', cc: '', from: '', replyTo: '', subject: 'Jenkins job status', to: 'vikram1.kumar@paytm.com'
   }
+  stage('Slack Nitification'){
+    slackSend channel: '#jenkins', color: 'good', message: 'Welcome this message here from jenkins', tokenCredentialId: 'jenkins-slack-configuration', username: 'jenkins-slack-bot'  
+  }
 }
