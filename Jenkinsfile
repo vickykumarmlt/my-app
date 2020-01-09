@@ -14,7 +14,7 @@ node{
   }
    stage('echoing output from console'){
      sh "value=5"
-     sh 'echo "username" "$USER" "${value}"' 
+     sh 'echo "username" "$USER" ${value}' 
      sh "whoami"
   }
 }
