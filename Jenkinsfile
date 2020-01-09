@@ -17,6 +17,6 @@ node{
      sh "echo ${value} $USER"  
   }
   stage('Email notification'){
-     mail bcc: '', body: 'jenkins job completed', cc: '', from: '', replyTo: '', subject: 'Jenkins job status', to: 'vikram1.kumar@paytm.com'
+     mail bcc: '', body: 'jenkins job successfully completed', cc: '', from: '', replyTo: '', subject: 'Jenkins job status', to: 'vikram1.kumar@paytm.com'
   }
 }
