@@ -13,7 +13,6 @@ pipeline{
 				git 'https://github.com/vickykumarmlt/my-app'
 			} }   		
 		stage('Compile and package'){
-			skipDefaultCheckout(true)
 			steps{
 				sh "mvn clean package"				
 			}
