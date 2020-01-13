@@ -5,16 +5,16 @@ pipeline{
 	 {
 	 maven 'Apache Maven 3.6.0'
 	 } 
-   	 options {
-   	 skipDefaultCheckout(true)
-	}
+   	 
 	
 	stages{
 		stage('SCM-Checkout'){
+			skipDefaultCheckout(true)
 			steps{
 				git 'https://github.com/vickykumarmlt/my-app'
 			} }   		
 		stage('Compile and package'){
+			skipDefaultCheckout(true)
 			steps{
 				sh "mvn clean package"				
 			}
