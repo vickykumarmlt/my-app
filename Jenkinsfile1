@@ -5,6 +5,10 @@ pipeline{
 	 {
 	 maven 'Apache Maven 3.6.0'
 	 } 
+	   options {
+        ansiColor('xterm')
+        skipDefaultCheckout() // removes the "Declarative Checkout SCM" stage
+    }
    	
 	stages{
 		stage('SCM-Checkout'){
