@@ -1,3 +1,4 @@
+def mvnHome= tool (name: 'Apache Maven 3.6.0', type: 'maven')+'/bin/mvn'
 pipeline{
 	agent any
 	
@@ -8,7 +9,6 @@ pipeline{
 			} }   		
 		stage('Compile and package'){
 			steps{
-				def mvnHome= tool (name: 'Apache Maven 3.6.0', type: 'maven')+'/bin/mvn'
 				sh "${mvnHome} clean package"				
 			}
 		}
