@@ -5,7 +5,9 @@ pipeline{
 	 {
 	 maven 'Apache Maven 3.6.0'
 	 } 
-    
+   	 options {
+   	 skipDefaultCheckout(true)
+	}
 	
 	stages{
 		stage('SCM-Checkout'){
