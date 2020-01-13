@@ -9,7 +9,6 @@ pipeline{
 	
 	stages{
 		stage('SCM-Checkout'){
-			skipDefaultCheckout(true)
 			steps{
 				git 'https://github.com/vickykumarmlt/my-app'
 			} }   		
