@@ -3,7 +3,7 @@ pipeline{
 	agent any
 	environment {
         	//mvnHome= tool "(name: 'Apache Maven 3.6.0', type: 'maven')+'/bin/mvn'"
-		mvnhome= tools {  maven 'Apache Maven 3.6.0'}
+		mvnhome= tools {  maven 'Apache Maven 3.6.0'} 
     }
 	
 	stages{
@@ -13,7 +13,7 @@ pipeline{
 			} }   		
 		stage('Compile and package'){
 			steps{
-				sh "${mvnHome} clean package"				
+				sh "${mvnhome}+'/bin/mvn' clean package"				
 			}
 		}
 	}
