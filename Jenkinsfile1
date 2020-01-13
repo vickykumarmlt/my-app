@@ -11,7 +11,7 @@ pipeline{
 			steps{
 				git 'https://github.com/vickykumarmlt/my-app'
 			} }   		
-		stage('Build'){
+		stage('Package'){
 			steps{
 				sh "mvn clean package"				
 			}
