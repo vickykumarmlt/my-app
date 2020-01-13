@@ -1,6 +1,6 @@
 pipeline{
 	agent any
-	def mvnHome= tool (name: 'Apache Maven 3.6.0', type: 'maven')+'/bin/mvn'
+	
 	stages{
 		stage('SCM-Checkout'){
 			steps{
@@ -8,6 +8,7 @@ pipeline{
 			} }   		
 		stage('Compile and package'){
 			steps{
+				def mvnHome= tool (name: 'Apache Maven 3.6.0', type: 'maven')+'/bin/mvn'
 				sh "${mvnHome} clean package"				
 			}
 		}
