@@ -1,0 +1,21 @@
+pipeline{
+	agent any
+	tools 
+	 {
+	 maven 'Apache Maven 3.6.0'
+	 } 
+    
+	
+	stages{
+		stage('SCM-Checkout'){
+			
+				git 'https://github.com/vickykumarmlt/my-app'
+			 }   		
+		stage('Compile and package'){
+			
+				sh "mvn clean package"				
+		
+		}
+	}
+
+}
