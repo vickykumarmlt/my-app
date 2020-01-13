@@ -5,12 +5,12 @@ pipeline{
 		stage('SCM-Checkout'){
 			steps{
 				git 'https://github.com/vickykumarmlt/my-app'
-			}    		
+			} }   		
 		stage('Compile and package'){
 			steps{
 				sh "${mvnHome} clean package"				
 			}
 		}
 	}
-}
+
 }
