@@ -5,18 +5,27 @@ pipeline{
 	 {
 	 maven 'Apache Maven 3.6.0'
 	 } 
-   	 
-	
+   	
 	stages{
 		stage('SCM-Checkout'){
 			steps{
 				git 'https://github.com/vickykumarmlt/my-app'
 			} }   		
-		stage('Compile and package'){
+		stage('Build'){
 			steps{
 				sh "mvn clean package"				
 			}
 		}
+		stage('deploy'){
+			when {
+              			expression {
+                		currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              				   }
+            			}
+			steps{
+				sh "java -cp /var/lib/jenkins/workspace/my-app-pipeline/target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App" 
+				}
+			}
 	}
 
 }
