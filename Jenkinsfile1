@@ -17,8 +17,9 @@ pipeline{
 			} }   		
 		stage('Package'){
 			steps{
-				sh "mvn clean package"	
-				sh "echo i Said, Hi Mr. ${name}"
+				sh """ #!/bin/bash mvn clean package
+				echo i Said, Hi Mr. ${name}
+				"""
 			}
 		}
 		stage('deploy'){
