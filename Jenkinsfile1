@@ -1,4 +1,4 @@
-
+def name="vikam"
 pipeline{
 	agent any
 	tools 
@@ -10,7 +10,7 @@ pipeline{
     }
    	
 	stages{
-		def name="vikram"
+		
 		stage('SCM-Checkout'){
 			steps{
 				git 'https://github.com/vickykumarmlt/my-app'
