@@ -10,13 +10,16 @@ pipeline{
     }
    	
 	stages{
+		def name="vikram"
 		stage('SCM-Checkout'){
 			steps{
 				git 'https://github.com/vickykumarmlt/my-app'
 			} }   		
 		stage('Package'){
 			steps{
-				sh "mvn clean package"				
+				def name="vikram1"
+				sh "mvn clean package"	
+				echo ${name}
 			}
 		}
 		stage('deploy'){
