@@ -17,11 +17,11 @@ pipeline{
 			} }   		
 		stage('Package'){
 			steps{
-				sh '''
+				sh """
 				set +x
 				#!/bin/bash mvn clean package
 				echo i Said, Hi Mr. ${name}
-				'''
+				"""
 			}
 		}
 		stage('deploy'){
