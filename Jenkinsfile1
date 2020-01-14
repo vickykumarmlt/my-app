@@ -17,7 +17,9 @@ pipeline{
 			} }   		
 		stage('Package'){
 			steps{
-				sh """ #!/bin/bash mvn clean package
+				sh """
+				set +x
+				#!/bin/bash mvn clean package
 				echo i Said, Hi Mr. ${name}
 				"""
 			}
