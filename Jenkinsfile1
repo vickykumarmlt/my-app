@@ -17,7 +17,6 @@ pipeline{
 			} }   		
 		stage('Package'){
 			steps{
-				def name="vikram1"
 				sh "mvn clean package"	
 				echo ${name}
 			}
