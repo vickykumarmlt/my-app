@@ -4,12 +4,8 @@ node{
     git 'https://github.com/vickykumarmlt/my-app'
   }
   stage('Compile-package'){
-      '''
-    sh "${mvnHome} clean package"
-    echo ${WORKSPACE}
-    stash includes: '${WORKSPACE}/target/*.jar', name: 'app'
-    '''
-  }
+       sh "${mvnHome} clean package"
+     }
   stage('print 1st Time'){
     sh 'java -cp /var/lib/jenkins/workspace/my-app-pipeline/target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App'
   }
