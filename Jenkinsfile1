@@ -23,7 +23,8 @@ pipeline{
 				echo Currnet Build Id is ${env.BUILD_ID}
 				echo ${env.JOB_NAME} ${env.BUILD_NUMBER}
 				echo Build URL is ${BUILD_URL} ${WORKSPACE}
-				ls -ltrh '${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar'
+				cp '${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar' '${WORKSPACE}/target/my-app-1.0-SNAPSHOT1.jar'
+				
 				"""
 			}
 		}
@@ -34,7 +35,7 @@ pipeline{
               				   }
             			}
 			steps{
-				sh "java -cp /var/lib/jenkins/workspace/my-app-pipeline/target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App" 
+				sh "java -cp '${WORKSPACE}/target/my-app-1.0-SNAPSHOT1.jar' com.mycompany.app.App" 
 				}
 			}
 	}
