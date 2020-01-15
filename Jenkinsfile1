@@ -20,8 +20,8 @@ pipeline{
 				sh """
 				mvn clean package
 				echo i Said, Hi Mr. ${name}
-				echo ${BUILD.ID}
-				echo ${JOB_NAME} ${BUILD_NUMBER}
+				echo ${env.BUILD.ID}
+				echo ${env.JOB_NAME} ${env.BUILD_NUMBER}
 				"""
 			}
 		}
