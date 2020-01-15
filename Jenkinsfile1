@@ -24,9 +24,7 @@ pipeline{
 				echo ${env.JOB_NAME} ${env.BUILD_NUMBER}
 				echo Build URL is ${BUILD_URL} ${WORKSPACE}
 				mv '${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar' '${WORKSPACE}/target/app.jar'
-				"""
-				stash includes: '${WORKSPACE}/target/app.jar', name: 'appp'
-			}
+				"""			}
 		}
 		stage('deploy'){
 			when {
@@ -35,7 +33,6 @@ pipeline{
               				   }
             			}
 			steps{
-				unstash 'appp'
 				sh "java -cp '${WORKSPACE}/target/app.jar' com.mycompany.app.App" 
 				}
 			}
