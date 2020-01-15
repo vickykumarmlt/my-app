@@ -24,8 +24,8 @@ pipeline{
 				echo ${env.JOB_NAME} ${env.BUILD_NUMBER}
 				echo Build URL is ${BUILD_URL} ${WORKSPACE}
 				mv '${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar' '${WORKSPACE}/target/app.jar'
-				stash includes: '${WORKSPACE}/target/app.jar' , name:'appp'
 				"""
+				stash includes: '${WORKSPACE}/target/app.jar', name: 'app'
 			}
 		}
 		stage('deploy'){
