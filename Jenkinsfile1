@@ -20,8 +20,9 @@ pipeline{
 				sh """
 				mvn clean package
 				echo i Said, Hi Mr. ${name}
-				echo ${env.BUILD_ID}
+				echo Currnet Build Id is ${env.BUILD_ID}
 				echo ${env.JOB_NAME} ${env.BUILD_NUMBER}
+				echo Build URL is ${BUILD_URL}
 				"""
 			}
 		}
