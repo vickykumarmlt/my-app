@@ -23,7 +23,7 @@ pipeline{
 				echo Currnet Build Id is ${env.BUILD_ID}
 				echo ${env.JOB_NAME} ${env.BUILD_NUMBER}
 				echo Build URL is ${BUILD_URL} ${WORKSPACE}
-				cp '${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar' '${WORKSPACE}/target/my-app-1.0-SNAPSHOT1.jar'
+				mv '${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar' '${WORKSPACE}/target/app.jar'
 				
 				"""
 			}
@@ -35,7 +35,7 @@ pipeline{
               				   }
             			}
 			steps{
-				sh "java -cp '${WORKSPACE}/target/my-app-1.0-SNAPSHOT1.jar' com.mycompany.app.App" 
+				sh "java -cp '${WORKSPACE}/target/app.jar' com.mycompany.app.App" 
 				}
 			}
 	}
