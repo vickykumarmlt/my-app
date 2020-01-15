@@ -21,7 +21,7 @@ pipeline{
 				mvn clean package
 				echo i Said, Hi Mr. ${name}
 				echo ${BUILD.ID}
-				echo ${JOB_NAME}-${BUILD_NUMBER}
+				echo ${JOB_NAME} ${BUILD_NUMBER}
 				"""
 			}
 		}
