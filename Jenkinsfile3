@@ -3,12 +3,12 @@ pipeline {
     environment {
         // Using returnStdout
         CC = """${sh(
-                returnStdout: true,
+                returnStdout: false,
                 script: 'echo "clang"'
             )}""" 
         // Using returnStatus
         EXIT_STATUS = """${sh(
-                returnStatus: true,
+                returnStatus: false,
                 script: 'exit 1'
             )}"""
     }
