@@ -35,7 +35,7 @@ pipeline{
               				   }
             			}
 			steps{
-				unstash:'appp'
+				unstash 'appp'
 				sh "java -cp '${WORKSPACE}/target/app.jar' com.mycompany.app.App" 
 				}
 			}
