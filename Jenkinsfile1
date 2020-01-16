@@ -42,6 +42,7 @@ pipeline{
 						
 						sh "echo HI there this is from jenkins pipeline script > 1.txt"
 						sh "scp -o StrictHostKeyChecking=no 1.txt ubuntu@13.126.182.189:/home/ubuntu/1.txt"
+						sh "ssh -v ubuntu@13.126.182.189"
 						sh "ssh -o StrictHostKeyChecking=no ubuntu@13.126.182.189 uptime"
 						
 					}}
