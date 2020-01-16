@@ -42,7 +42,8 @@ pipeline{
 				
     						sh "touch 1.txt"
 						sh "scp -o StrictHostKeyChecking=no 1.txt ubuntu@13.126.182.189:/home/ubuntu/1.txt"
-					
+						sh "echo HI there this is from jenkins pipeline script >  /home/ubuntu/1.txt"
+						sh "chwon jenkins:jenkins :/home/ubuntu/1.txt"
 					}}
 			
 		}
