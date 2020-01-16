@@ -44,7 +44,7 @@ pipeline{
 						sh "scp -o StrictHostKeyChecking=no 1.txt ubuntu@13.126.182.189:/home/ubuntu/1.txt"
 						sh "ssh 13.126.182.189 chwon jenkins:jenkins /home/ubuntu/1.txt"
 						
-					}}}
+					}}
 			
 		}
 	}
