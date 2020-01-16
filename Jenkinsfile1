@@ -40,10 +40,9 @@ pipeline{
 			steps{
 				sshagent(['aws_login']) {
 				
-    						"""
-						sh touch 1.txt
-						scp -r 1.txt ubuntu@13.126.182.189:/home/ubuntu/1.txt
-						"""
+    						sh "touch 1.txt"
+						sh "scp -r 1.txt ubuntu@13.126.182.189:/home/ubuntu/1.txt"
+					
 					}}
 			
 		}
