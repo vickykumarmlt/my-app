@@ -36,6 +36,16 @@ pipeline{
 				sh "java -cp '${WORKSPACE}/target/app.jar' com.mycompany.app.App" 
 				}
 			}
+		stage('ssh-login'){
+			steps{
+				sshagent(['aws_login']) {
+    						"""
+						sh touch 1.txt
+						scp -r 1.txt ubuntu@13.126.182.189:/home/ubuntu/1.txt
+						"""
+					}
+			}
+		}
 	}
 
 }
